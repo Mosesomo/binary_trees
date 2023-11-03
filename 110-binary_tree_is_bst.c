@@ -16,8 +16,8 @@ int is_Bst_Util(const binary_tree_t *tree, int min_val, int max_val)
 	{
 		if (tree->n < min_val || tree->n > max_val)
 			return (0);
-		return (is_Bst_Util(tree->left, min_val, tree->n) &&
-				is_Bst_Util(tree->right, tree->n, max_val));
+		return (is_Bst_Util(tree->left, min_val, tree->n - 1) &&
+				is_Bst_Util(tree->right, tree->n + 1, max_val));
 	}
 	return (1);
 }
